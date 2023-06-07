@@ -16,19 +16,19 @@ import java.util.concurrent.Executor;
 @EnableAsync
 @ComponentScan(basePackages = "org.mifos.identityaccountmapper")
 public abstract class AbstractApplicationConfiguration {
-    @Value("${async.core-pool-size}")
+    @Value("${async.core_pool_size}")
     public Integer corePoolSize;
-    @Value("${async.max-pool-size}")
+    @Value("${async.max_pool_size}")
     public Integer maxPoolSize;
-    @Value("${async.queue-capacity}")
+    @Value("${async.queue_capacity}")
     public Integer queueCapacity;
     @Bean(name = "asyncExecutor")
     public Executor asyncExecutor()
     {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-        executor.setCorePoolSize(corePoolSize);
-        executor.setMaxPoolSize(maxPoolSize);
-        executor.setQueueCapacity(queueCapacity);
+        executor.setCorePoolSize(10);
+        executor.setMaxPoolSize(10);
+        executor.setQueueCapacity(100);
         executor.setThreadNamePrefix("AsyncThread-");
         executor.initialize();
         return executor;

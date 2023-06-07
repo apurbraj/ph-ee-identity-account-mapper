@@ -18,9 +18,9 @@ spring:
     max_byte_disk: 10
 
   datasource:
-    url: jdbc:mysql:thin://operations-mysql:3306/IdentityAccountMapper
+    url: jdbc:mysql:thin://idmappermysql:3306/IdentityAccountMapper
     username: root
-    password: mysql
+    password: ethieTieCh8ahv
     driver-class-name: org.drizzle.jdbc.DrizzleDriver
 
 logging:
@@ -28,9 +28,9 @@ logging:
     ROOT: DEBUG
 
 async:
-  core-pool-size: 10
-  max-pool-size: 10
-  queue-capacity: 100
+  core_pool_size: 10
+  max_pool_size: 10
+  queue_capacity: 100
 
 gsma-connector:
   contactpoint: "https://amsmifos.sandbox.mifos.io"
@@ -54,4 +54,4 @@ zeebe:
   #    number-of-workers: 15
   #    evenly-allocated-max-jobs: "#{${zeebe.client.max-execution-threads} / ${zeebe.client.number-of-workers}}"
   broker:
-    contactpoint: "zeebe-zeebe-gateway:26500"
+    contactpoint: "idmapper-zeebe-gateway:26500"
