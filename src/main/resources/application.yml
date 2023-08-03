@@ -19,8 +19,8 @@ spring:
 
   datasource:
     url: jdbc:mysql:thin://operationsmysql:3306/identity_account_mapper
-    username: root
-    password: mysql
+    username: mifos
+    password: password
     driver-class-name: org.drizzle.jdbc.DrizzleDriver
 
 logging:
@@ -54,4 +54,4 @@ zeebe:
   #    number-of-workers: 15
   #    evenly-allocated-max-jobs: "#{${zeebe.client.max-execution-threads} / ${zeebe.client.number-of-workers}}"
   broker:
-    contactpoint: "zeebe-zeebe-gateway:26500"
+    contactpoint: "g2p-sandbox-zeebe-gateway:26500"
